@@ -1,0 +1,22 @@
+
+<div layout="row" layout-padding layout-wrap layout-margin layout-align="space-around">
+  <div class="padded" md-whiteframe="5"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column"
+    layout-align="center center">
+    <md-toolbar style="font-weight: bold; color: white; text-align: center">
+        <h3>LOGIN HERE!</h3>
+     </md-toolbar>
+     <form name="loginform" ng-submit="submit(loginform.$valid)" novalidate><center>
+       <md-input-container>
+         <label>Username:</label>
+         <input type="text" ng-model="username" required="">
+     </md-input-container>
+     <md-input-container>
+       <label>Password:</label>
+       <input type="password" ng-model="password" required="">
+     </md-input-container>
+     <md-button>
+        <button type="submit" class="btncolor">Submit</button>
+     </md-button></center>
+     </form>
+  </div>
+</div>

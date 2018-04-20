@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="design.css">
+<script src="validation.js">
+</script>
+</head>
+<body>
+  <div class="registerform">
+    <h4>Registration form!</h4>
+    <form action="login.html" method="post" >
+      Username: <input type="text" id="username" placeholder="Username"><br><br>
+      Password: <input type="password" id="password" placeholder="Password"><br><br>
+      Email: <input type="email" id="email" placeholder="eg. xyz@gmail.com"><br><br>
+      City: <select id="city" required>
+        <option value=""> Select one </option>
+        <option value="Mumbai"> Mumbai </option>
+        <option value="Delhi"> Delhi </option>
+        <option value="Banglore"> Banglore </option>
+        <option value="Kolkata"> Kolkata </option>
+      </select><br><br>
+      <input class="btncolor" type="submit" id="submit" value="Submit" onclick="return validation()">
+</form>
+</div>
+</body>
