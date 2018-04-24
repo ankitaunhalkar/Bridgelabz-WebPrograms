@@ -3,17 +3,17 @@
   <div md-whiteframe="5"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column"
     layout-align="center center" style="margin-top:10%">
        <h1>Login</h1>
-     <form name="userForm">
-       <md-input-container style="width: 100%">
-         <label>Username:</label>
-         <input type="text" ng-model="username" required="">
-     </md-input-container>
+       <form name="userForm" ng-controller="loginController">
+         <md-input-container style="width: 100%">
+           <label>Username:</label>
+           <input type="text" ng-model="username" required="">
+       </md-input-container>
      <md-input-container style="width: 100%">
        <label>Password:</label>
        <input type="password" ng-model="password" required="">
      </md-input-container>
      <md-input-container style="width: 100%">
-       <input type="submit" value="Login" id="btncolor">
+       <input aria-label="Login" type="submit" value="Login" id="btncolor" ng-click="home()">
       </md-input-container>
      </form>
   </div>

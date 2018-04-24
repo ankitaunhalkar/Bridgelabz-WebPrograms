@@ -1,9 +1,14 @@
 //var app=angular.module('routerApp');
-app.controller('loginController', function($scope) {
-  var user=$scope.username;
-  var pass=$scope.password;
-  if(user=="ankita" && pass=="ankita")
+app.controller('loginController', function($scope,$state) {
+   $scope.username="ankita";
+   $scope.password="ankita";
+  if($scope.username != "" && $scope.password != "")
   {
-    alert("Success");
+      $scope.home=function(){
+      $state.go('home');
+    }
+  }
+  else {
+    alert("Enter username/password");
   }
 });

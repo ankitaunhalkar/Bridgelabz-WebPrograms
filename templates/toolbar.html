@@ -1,7 +1,7 @@
-<md-toolbar layout="row" style="background-color: #505050; position: fixed; padding:15px 20px">
-  <md-button class="md-icon-button" aria-label="Settings">
-          <md-icon md-font-icon="{{ menu }}" ng-click="toggleLeft()"></md-icon>
+<md-toolbar layout="row" id="toolbar">
+  <md-button class="md-icon-button" ng-click="toggleLeft()"  aria-label="Settings">
+      <span> <md-icon><i class="material-icons">menu</i></md-icon></span>
       </md-button>
-      <span class="md-toolbar-tools" style="size:30; font-weight:bold">Single Page App Without A Framework!</span>
-      <md-button class="md-raised md-primary material-cust-large-button" height="3" layout-algin="right" style="font-weight:bold">Logout</md-button>
+      <span class="md-toolbar-tools" style="size:30; font-weight:bold">Online Mobile Shopping App</span>
+      <md-button class="md-raised md-primary material-cust-large-button" height="3" layout-algin="right" style="font-weight:bold" ng-click="login()">Logout</md-button>
 </md-toolbar>

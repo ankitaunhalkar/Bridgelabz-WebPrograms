@@ -9,3 +9,7 @@
 #btncolor:hover {
     background-color: #6495ED;
 }
+
+#toolbar {
+  background-color: #505050; position: fixed; padding:15px 20px
+}
