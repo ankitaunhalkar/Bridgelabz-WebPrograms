@@ -3,18 +3,19 @@
   <div md-whiteframe="5"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column"
     layout-align="center center" style="margin-top:10%">
        <h1>Login</h1>
-       <form name="userForm" ng-controller="loginController">
-         <md-input-container style="width: 100%">
-           <label>Username:</label>
-           <input type="text" ng-model="username" required="">
-       </md-input-container>
-     <md-input-container style="width: 100%">
-       <label>Password:</label>
-       <input type="password" ng-model="password" required="">
-     </md-input-container>
-     <md-input-container style="width: 100%">
-       <input aria-label="Login" type="submit" value="Login" id="btncolor" ng-click="home()">
-      </md-input-container>
-     </form>
-  </div>
+       <form name="userForm">
+         <md-input-container style="width: 100%" >
+           <label>Email Id:</label>
+           <input type="text" ng-model="email" id="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/">
+        </md-input-container>
+        <md-input-container style="width: 100%">
+          <label>Password:</label>
+          <input type="password" ng-model="password" id="password" ng-pattern="/^[a-z]+$/" minlength="3" maxlength="8"  >
+        </md-input-container>
+        <md-input-container style="width: 100%">
+          <input aria-label="Login" type="submit" value="Login" id="btncolor" ng-disabled="!userForm.$valid" ng-click="home()" >
+        </md-input-container>
+      </form>
+        <div id="error"> </div>
+    </div>
 </div>

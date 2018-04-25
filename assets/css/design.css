@@ -13,3 +13,10 @@
 #toolbar {
   background-color: #505050; position: fixed; padding:15px 20px
 }
+#greyColor {
+  background-color: #505050;
+}
+.errorMessage {
+  color: red;
+  font-size: 15px;
+}

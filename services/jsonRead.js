@@ -1,7 +1,8 @@
 app.service('jsonRead',function($http) {
-  $http.get("products.json").then(function (response) {
-
-        return productsList = response.data;
-
-    }
-)});
+    this.getJson=function(){
+       return $http.get("products.json").then(function(response){
+         // console.log(response.data);
+         return response.data;
+         console.log(response.data);
+    });
+}});
