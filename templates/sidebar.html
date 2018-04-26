@@ -1,1 +1,11 @@
-
+<md-sidenav class="md-sidenav-left" md-component-id="left"
+               md-disable-backdrop md-whiteframe="4" id="sideBar">
+               <md-content layout-margin>
+                 <p><h4>Manufacturer</h4></p>
+                <div ng-repeat="product in jsonData">
+                  <md-checkbox ng-checked="" ng-click="">
+                    {{product.specs.manufacturer}}
+                  </md-checkbox>
+                </div>
+              </md-content>
+</md-sidenav>
