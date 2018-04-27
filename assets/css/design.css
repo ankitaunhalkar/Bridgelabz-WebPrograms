@@ -6,6 +6,7 @@
      border-radius: 4px;
      cursor: pointer;
 }
+
 #btncolor:hover {
     background-color: #6495ED;
 }
@@ -13,20 +14,33 @@
 #toolbar {
   background-color: #505050;
   position: fixed;
-   padding:15px 20px;
+ padding:15px 20px;
 }
+
 #greyColor {
   background-color: #505050;
 }
+
 #sidebarButton {
-  background-color: #505050;
+  /* background-color: #505050; */
   margin-top: 1%;
 }
+
 .errorMessage {
   color: red;
   font-size: 15px;
 }
+
 #sideBar {
   position:fixed;
-  margin-top:94px
+  margin-top:94px;
+  width : 15%;
+}
+
+#sideBarContent {
+  margin-left: 25px;
+}
+
+.dashboardCard{
+  margin-left:60px;
 }

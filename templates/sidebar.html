@@ -1,11 +1,29 @@
-<md-sidenav class="md-sidenav-left" md-component-id="left"
-               md-disable-backdrop md-whiteframe="4" id="sideBar">
-               <md-content layout-margin>
-                 <p><h4>Manufacturer</h4></p>
-                <div ng-repeat="product in jsonData">
+<md-sidenav md-component-id="left"
+               md-disable-backdrop id="sideBar">
+               <md-content layout-margin id="sideBarContent">
+                   <h4>Manufacturer</h4>
+                <div ng-repeat="product in jsonData | unique: 'specs.manufacturer' | orderBy: 'specs.manufacturer' ">
                   <md-checkbox ng-checked="" ng-click="">
-                    {{product.specs.manufacturer}}
+                      {{product.specs.manufacturer}}
                   </md-checkbox>
                 </div>
+                  <h4>Storage</h4>
+                    <div ng-repeat="product in jsonData | unique: 'specs.storage' | orderBy: 'specs.storage' ">
+                      <md-checkbox ng-checked="" ng-click="">
+                        {{product.specs.storage}}
+                      </md-checkbox>
+                    </div>
+                    <h4>OS</h4>
+                      <div ng-repeat="product in jsonData | unique: 'specs.os' | orderBy: 'specs.os' ">
+                        <md-checkbox ng-checked="" ng-click="">
+                          {{product.specs.os}}
+                        </md-checkbox>
+                      </div>
+                      <h4>Camera</h4>
+                        <div ng-repeat="product in jsonData | unique: 'specs.camera' | orderBy: 'specs.camera' ">
+                          <md-checkbox ng-checked="" ng-click="">
+                            {{product.specs.camera}}
+                          </md-checkbox>
+                        </div>
               </md-content>
 </md-sidenav>

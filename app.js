@@ -1,4 +1,4 @@
-var app=angular.module('routerApp',['ui.router','ngMaterial']);
+var app=angular.module('routerApp',['ui.router','ngMaterial','angular.filter']);
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('login',{
@@ -11,6 +11,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
            url: '/home',
            templateUrl: 'templates/home.html',
            controller: 'homeController'
+  })
+
+  .state('home.dashboard',{
+          url:'/dashboard',
+          templateUrl: 'templates/dashboard.html'
   });
   
  $urlRouterProvider.otherwise("/login");

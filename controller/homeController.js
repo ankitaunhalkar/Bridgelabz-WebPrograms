@@ -1,4 +1,4 @@
-app.controller('homeController', function($scope,jsonRead,$mdSidenav) {
+app.controller('homeController', function($scope,jsonRead,$mdSidenav,$state) {
   $scope.toggleLeft = buildToggler('left');
    $scope.toggleRight = buildToggler('right');
  function buildToggler(componentId) {
@@ -10,5 +10,6 @@ app.controller('homeController', function($scope,jsonRead,$mdSidenav) {
   $scope.getData.then(function(response) {
   $scope.jsonData = response;
   //  console.log($scope.jsonData);
+  $state.go('home.dashboard');
   })
 });
