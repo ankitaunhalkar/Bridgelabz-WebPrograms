@@ -1,4 +1,4 @@
-<div class='md-padding' layout='row'  layout-wrap style="margin-top:80px" >
+<div class='md-padding' layout='row'  layout-wrap flex-gt-xm="30" id="dashboardCard">
     <div layout="column" ng-repeat="product in jsonData" flex="33">
       <md-card>
         <md-card-header>
@@ -6,12 +6,13 @@
         </md-card-header>
         <md-card-content>
           <img ng-src="{{product.image.small}}"  alt="images" flex="100"/>
-            <div class="md-headline">Manufacturer: {{product.specs.manufacturer}}</div>
-            <div class="md-headline">Storage: {{product.specs.storage}}</div>
-            <div class="md-headline">OS: {{product.specs.os}}</div>
-            <div class="md-headline">Camera : {{product.specs.camera}}</div>
+            <p><strong>Manufacturer:</strong> {{product.specs.manufacturer}}</p>
+            <p><strong>Storage:</strong> {{product.specs.storage}}</p>
+            <p><strong>OS:</strong> {{product.specs.os}}</p>
+            <p><strong>Camera:</strong> {{product.specs.camera}}</p>
+            <p><strong>Price:</strong> {{product.price}}$</p>
           <md-card-actions  layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary">View</md-button>
+            <md-button class="md-raised md-primary"  ng-click='showAdvanced($state,product)'>View</md-button>
             <md-button class="md-raised md-primary">Buy Now</md-button>
           </md-card-actions>
       </md-card-content>

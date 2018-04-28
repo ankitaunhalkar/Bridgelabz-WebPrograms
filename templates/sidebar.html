@@ -1,6 +1,6 @@
 <md-sidenav md-component-id="left"
-               md-disable-backdrop id="sideBar">
-               <md-content layout-margin id="sideBarContent">
+               md-disable-backdrop class="sideBar">
+               <md-content layout-margin class="sideBarContent">
                    <h4>Manufacturer</h4>
                 <div ng-repeat="product in jsonData | unique: 'specs.manufacturer' | orderBy: 'specs.manufacturer' ">
                   <md-checkbox ng-checked="" ng-click="">

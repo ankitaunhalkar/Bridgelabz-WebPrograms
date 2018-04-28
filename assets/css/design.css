@@ -14,7 +14,7 @@
 #toolbar {
   background-color: #505050;
   position: fixed;
- padding:15px 20px;
+ /* padding:15px 20px; */
 }
 
 #greyColor {
@@ -31,16 +31,16 @@
   font-size: 15px;
 }
 
-#sideBar {
+.sideBar {
   position:fixed;
-  margin-top:94px;
-  width : 15%;
+  margin-top:64px;
+  width : 18%;
 }
 
-#sideBarContent {
+.sideBarContent {
   margin-left: 25px;
 }
 
-.dashboardCard{
-  margin-left:60px;
+#dashboardCard{
+  padding-top: 5%;
 }

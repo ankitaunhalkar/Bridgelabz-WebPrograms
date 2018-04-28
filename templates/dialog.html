@@ -1,0 +1,20 @@
+
+<md-dialog aria-label="Mobile">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{item.name}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog"><i class="material-icons">cancel</i></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content><center>
+      <div class="md-dialog-content">
+        <img alt="image" ng-src="{{item.image.large}}">
+        <p>
+          {{item.description}}
+        </p>
+      </div></center>
+    </md-dialog-content>
+</md-dialog>
