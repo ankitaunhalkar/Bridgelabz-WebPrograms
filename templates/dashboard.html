@@ -1,5 +1,5 @@
 <div class='md-padding' layout='row'  layout-wrap flex-gt-xm="30" id="dashboardCard">
-    <div layout="column" ng-repeat="product in jsonData" flex="33">
+    <div layout="column" ng-repeat="product in jsonData | selectedTags:selected" flex="33">
       <md-card>
         <md-card-header>
           <span class="md-headline">{{product.name}}</span>
@@ -13,7 +13,7 @@
             <p><strong>Price:</strong> {{product.price}}$</p>
           <md-card-actions  layout="row" layout-align="end center">
             <md-button class="md-raised md-primary"  ng-click='showAdvanced($state,product)'>View</md-button>
-            <md-button class="md-raised md-primary">Buy Now</md-button>
+            <md-button class="md-raised md-primary" ng-click='showAlert($state)'>Buy Now</md-button>
           </md-card-actions>
       </md-card-content>
       </md-card>

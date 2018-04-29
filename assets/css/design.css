@@ -25,6 +25,9 @@
   /* background-color: #505050; */
   margin-top: 1%;
 }
+#dashboardCard{
+  padding-top: 5%;
+}
 
 .errorMessage {
   color: red;
@@ -39,8 +42,4 @@
 
 .sideBarContent {
   margin-left: 25px;
-}
-
-#dashboardCard{
-  padding-top: 5%;
 }

@@ -3,7 +3,7 @@
                <md-content layout-margin class="sideBarContent">
                    <h4>Manufacturer</h4>
                 <div ng-repeat="product in jsonData | unique: 'specs.manufacturer' | orderBy: 'specs.manufacturer' ">
-                  <md-checkbox ng-checked="" ng-click="">
+                  <md-checkbox ng-checked="exists(product.specs.manufacturer, selected)" ng-click="toggle(product.specs.manufacturer, selected)">
                       {{product.specs.manufacturer}}
                   </md-checkbox>
                 </div>
