@@ -9,19 +9,19 @@
                 </div>
                   <h4>Storage</h4>
                     <div ng-repeat="product in jsonData | unique: 'specs.storage' | orderBy: 'specs.storage' ">
-                      <md-checkbox ng-checked="" ng-click="">
+                      <md-checkbox ng-checked="exists(product.specs.storage, selected)" ng-click="toggle(product.specs.storage, selected)">
                         {{product.specs.storage}}
                       </md-checkbox>
                     </div>
                     <h4>OS</h4>
                       <div ng-repeat="product in jsonData | unique: 'specs.os' | orderBy: 'specs.os' ">
-                        <md-checkbox ng-checked="" ng-click="">
+                        <md-checkbox ng-checked="exists(product.specs.os, selected)" ng-click="toggle(product.specs.os, selected)">
                           {{product.specs.os}}
                         </md-checkbox>
                       </div>
                       <h4>Camera</h4>
                         <div ng-repeat="product in jsonData | unique: 'specs.camera' | orderBy: 'specs.camera' ">
-                          <md-checkbox ng-checked="" ng-click="">
+                          <md-checkbox ng-checked="exists(product.specs.camera, selected)" ng-click="toggle(product.specs.camera, selected)">
                             {{product.specs.camera}}
                           </md-checkbox>
                         </div>
