@@ -1,55 +1,177 @@
+
 app.filter('selectedTags', function() {
-// filter to check array of elements
-return function(users, tags)
-{
-  //Json data - users
-  // tags- selected data
-     if (users !== undefined) {
-       return users.filter(function(product) {
-         if (tags.indexOf(product.specs.manufacturer) != -1) {
-             return true;
+  return function(data, arrayManufacturer, arrayStorage, arrayOs, arrayCamera) {
+     var filteredArray = [];
+     var tempArray = [];
+
+     if (data != undefined) {
+
+       if(arrayManufacturer==0 || arrayOs==0 || arrayCamera==0 || arrayStorage==0)
+       {
+         tempArray = data;
+       }
+       if (arrayManufacturer.length > 0) {
+         for (var j = 0; j < tempArray.length; j++) {
+           var element = data[j];
+
+           for (var i = 0; i < arrayManufacturer.length; i++) {
+             var selectedProduct= arrayManufacturer[i];
+             if (element.specs.manufacturer == selectedProduct)
+              {
+               filteredArray.push(element);
+             }
+           }
          }
-         else if (tags.indexOf(product.specs.storage) != -1) {
-             return true;
+
+         if (filteredArray.length > 0) {
+           tempArray = filteredArray;
+
+           filteredArray = [];
+         } else {
+           tempArray = data;
          }
-         else if (tags.indexOf(product.specs.os) != -1) {
-             return true;
+       }
+
+         if (arrayStorage.length > 0) {
+           for (var j = 0; j < tempArray.length; j++) {
+             var element = tempArray[j];
+
+             for (var i = 0; i < arrayStorage.length; i++) {
+               var selectedProduct = arrayStorage[i];
+               if (element.specs.storage == selectedProduct) {
+                 filteredArray.push(element);
+               }
+             }
+           }
+           tempArray = filteredArray;
+           filteredArray = [];
          }
-         else if (tags.indexOf(product.specs.camera) != -1) {
-             return true;
+
+         if (arrayOs.length > 0) {
+           for (var j = 0; j < tempArray.length; j++) {
+             var element = tempArray[j];
+
+             for (var i = 0; i < arrayOs.length; i++) {
+               var selectedProduct = arrayOs[i];
+               if (element.specs.os == selectedProduct) {
+                 filteredArray.push(element);
+               }
+             }
+           }
+           tempArray = filteredArray;
+           filteredArray = [];
          }
-         else if(tags.length == 0) {
-             return true;
+
+         if (arrayCamera.length > 0) {
+           for (var j = 0; j < tempArray.length; j++) {
+             var element = tempArray[j];
+             for (var i = 0; i < arrayCamera.length; i++) {
+               var selectedProduct = arrayCamera[i];
+               if (element.specs.camera == selectedProduct) {
+                 filteredArray.push(element);
+               }
+             }
+           }
+           tempArray = filteredArray;
+           filteredArray = [];
          }
-         return false;
-     });
+
      }
-};
+     return tempArray;
+   };
 });
-
-
-// app.filter('selectedTags', function() {
-// // filter to check array of elements
-// return function(jsonData, manufacturerList) {
+// filter to check array of elements
+// return function(users, tags)
+// {
+//   //Json data - users
+//   // tags- selected data
+//   // console.log("tags: ", tags);
+//   var filteredArray = [];
+//   var temparray = [];
 //
-//    var returnArray=[];
-//    var completeArray=[];
-//   if(jsonData !=undefined)
-//   {
-//     var product = jsonData[i];
-//     if(manufacturerList != undefined)
-//     {
-//       for(var i=0;i<jsonData.length;i++)
-//       {
-//         for(var j=0;j<manufacturerList.length;j++)
-//         {
-//           if(product.specs.manufacturer==manufacturerList[j])
-//           {
-//               returnArray.push(product.specs.manufacturer);
+//      if (users !== undefined) {
+//       console.log("tags: ", tags);
+//        return users.filter(function(product) {
+//          var arrayManufacturer = product.specs.manufacturer;
+//          var arrayStorage = product.specs.storage;
+//          var arrayOs = product.specs.os;
+//          var arrayCamera = product.specs.camera;
+//
+//          if ((tags.indexOf(arrayManufacturer) != -1) || (tags.indexOf(arrayStorage) != -1) ||
+//                  (tags.indexOf(arrayOs) != -1) || (tags.indexOf(arrayCamera) != -1) ){
+//                    // return true;
+//                    for (var j = 0; j < x.length; j++) {
+//                           var item = x[j];
+//
+//                           for (var i = 0; i < arrayManufacturer.length; i++) {
+//                             var selectedItem = arrayManufacturer[i];
+//                             if (item.specs.manufacturer == selectedItem)
+//                              {
+//                               filteredArray.push(item);
+//                             }
+//                           }
+//                         }
+//
+//                         if (filteredArray.length > 0) {
+//                           temparray = filteredArray;
+//
+//                           filteredArray = [];
+//                         } else {
+//                           temparray = x;
+//                         }
+//
+//                         if (arrayStorage.length > 0) {
+//                           for (var j = 0; j < temparray.length; j++) {
+//                             var item = temparray[j];
+//
+//                             for (var i = 0; i < arrayStorage.length; i++) {
+//                               var selectedItem = arrayStorage[i];
+//                               if (item.specs.storage == selectedItem) {
+//                                 filteredArray.push(item);
+//                               }
+//                             }
+//                           }
+//                           temparray = filteredArray;
+//                           filteredArray = [];
+//                         }
+//
+//                         if (arrayOs.length > 0) {
+//                           for (var j = 0; j < temparray.length; j++) {
+//                             var item = temparray[j];
+//
+//                             for (var i = 0; i < arrayOs.length; i++) {
+//                               var selectedItem = arrayOs[i];
+//                               if (item.specs.os == selectedItem) {
+//                                 filteredArray.push(item);
+//                               }
+//                             }
+//                           }
+//                           temparray = filteredArray;
+//                           filteredArray = [];
+//                         }
+//
+//                         if (arrayCamera.length > 0) {
+//                           for (var j = 0; j < temparray.length; j++) {
+//                             var item = temparray[j];
+//
+//                             for (var i = 0; i < arrayCamera.length; i++) {
+//                               var selectedItem = arrayCamera[i];
+//                               if (item.specs.camera == selectedItem) {
+//                                 filteredArray.push(item);
+//                               }
+//                             }
+//                           }
+//                           temparray = filteredArray;
+//                           filteredArray = [];
+//                         }
+//                       } else {
+//                         temparray = x;
+//                       }
 //           }
-//         }
-//       }
-//     }
-//   }
+//          else if(tags.length == 0) {
+//              return true;
+//          }
+//          return false;
+//      });
+//      }
 // };
-// });

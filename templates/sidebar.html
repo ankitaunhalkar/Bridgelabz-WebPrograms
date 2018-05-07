@@ -3,27 +3,31 @@
                <md-content layout-margin class="sideBarContent">
                    <h4>Manufacturer</h4>
                 <div ng-repeat="product in jsonData | unique: 'specs.manufacturer' | orderBy: 'specs.manufacturer' ">
-                  <md-checkbox ng-checked="exists(product.specs.manufacturer, selected)" ng-click="toggle(product.specs.manufacturer, selected)">
+                  <md-checkbox ng-checked="exists(product.specs.manufacturer, manufacturer)" ng-click="toggle(product.specs.manufacturer, manufacturer)">
                       {{product.specs.manufacturer}}
                   </md-checkbox>
                 </div>
                   <h4>Storage</h4>
                     <div ng-repeat="product in jsonData | unique: 'specs.storage' | orderBy: 'specs.storage' ">
-                      <md-checkbox ng-checked="exists(product.specs.storage, selected)" ng-click="toggle(product.specs.storage, selected)">
+                      <md-checkbox ng-checked="exists(product.specs.storage, storage)" ng-click="toggle(product.specs.storage, storage)">
                         {{product.specs.storage}}
                       </md-checkbox>
                     </div>
                     <h4>OS</h4>
                       <div ng-repeat="product in jsonData | unique: 'specs.os' | orderBy: 'specs.os' ">
-                        <md-checkbox ng-checked="exists(product.specs.os, selected)" ng-click="toggle(product.specs.os, selected)">
+                        <md-checkbox ng-checked="exists(product.specs.os, os)" ng-click="toggle(product.specs.os, os)">
                           {{product.specs.os}}
                         </md-checkbox>
                       </div>
                       <h4>Camera</h4>
                         <div ng-repeat="product in jsonData | unique: 'specs.camera' | orderBy: 'specs.camera' ">
-                          <md-checkbox ng-checked="exists(product.specs.camera, selected)" ng-click="toggle(product.specs.camera, selected)">
+                          <md-checkbox ng-checked="exists(product.specs.camera, camera)" ng-click="toggle(product.specs.camera, camera)">
                             {{product.specs.camera}}
                           </md-checkbox>
                         </div>
-              </md-content>
+                        <!-- <div flex="100">
+     <h2 class="md-title">Selected Items</h2>
+     <code style="display: block; padding: 8px;">{{selected | json}}</code>
+   </div> -->
+  </md-content>
 </md-sidenav>
