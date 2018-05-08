@@ -17,7 +17,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
           url:'/dashboard',
           templateUrl: 'templates/dashboard.html',
           controller: 'dashboardController'
+  })
+  .state('home.cart',{
+          url:'/cart',
+          templateUrl: 'templates/cart.html',
+          controller: 'cartController'
   });
-
  $urlRouterProvider.otherwise("/login");
 });

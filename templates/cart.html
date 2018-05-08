@@ -1,5 +1,27 @@
-<html>
-<body>
-  name
-</body>
-</html>
+
+<div layout="row" layout-padding layout-wrap layout-margin layout-align="center-center" style="padding-top:10%">
+
+       <table border=1>
+         <tr>
+           <th> Items </th>
+           <th> Price </th>
+           <th> Quantity </th>
+           <th> Amount </th>
+         </tr>
+
+       <tr ng-repeat="array in arrayData">
+         <td>{{array.name}}</td>
+         <td>{{array.price}}</td>
+         <td>
+           <md-select ng-model="quantity" class="md-no-underline">
+             <md-option value="1">1</md-option>
+             <md-option value="2">2</md-option>
+             <md-option value="3">3</md-option>
+             <md-option value="4">4</md-option>
+           </md-select>
+     </td>
+   </tr>
+         <!-- {{sum}} -->
+
+     </table>
+</div>

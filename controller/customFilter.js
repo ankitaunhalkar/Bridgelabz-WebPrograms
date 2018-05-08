@@ -1,15 +1,16 @@
 
 app.filter('selectedTags', function() {
   return function(data, arrayManufacturer, arrayStorage, arrayOs, arrayCamera) {
-     var filteredArray = [];
-     var tempArray = [];
+
+     var filteredArray = [];//filtered elements
+     var tempArray = [];//stores data to perform next operations
 
      if (data != undefined) {
 
-       if(arrayManufacturer==0 || arrayOs==0 || arrayCamera==0 || arrayStorage==0)
-       {
+       //if(arrayManufacturer.length==0 && arrayOs.length==0 && arrayCamera.length==0 && arrayStorage.length==0)
+       //{
          tempArray = data;
-       }
+      // }
        if (arrayManufacturer.length > 0) {
          for (var j = 0; j < tempArray.length; j++) {
            var element = data[j];
@@ -19,13 +20,12 @@ app.filter('selectedTags', function() {
              if (element.specs.manufacturer == selectedProduct)
               {
                filteredArray.push(element);
-             }
+              }
            }
          }
 
          if (filteredArray.length > 0) {
            tempArray = filteredArray;
-
            filteredArray = [];
          } else {
            tempArray = data;
@@ -75,7 +75,6 @@ app.filter('selectedTags', function() {
            tempArray = filteredArray;
            filteredArray = [];
          }
-
      }
      return tempArray;
    };

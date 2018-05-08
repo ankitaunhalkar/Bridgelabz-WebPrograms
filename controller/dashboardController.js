@@ -1,4 +1,4 @@
-app.controller('dashboardController', function($scope, $mdDialog) {
+app.controller('dashboardController', function($scope, $state, $mdDialog, jsonRead) {
 $scope.showAdvanced = function(ev,items) {
    $mdDialog.show({
      controller: DialogController,
@@ -19,10 +19,11 @@ $scope.showAdvanced = function(ev,items) {
  //       .targetEvent(ev)
  //     )
  //   };
- var buyedItems = [];
-   $scope.buyNow = function(data) {
-     buyedItems.push(data);
-     $state.go('cart');
+ $scope.buyedItems = jsonRead.buyedItems;
+   $scope.buyNow = function(product) {
+    // console.log(product);
+     $scope.buyedItems.push(product);
+     $state.go('home.cart');
    };
  function DialogController($scope, item) {
    $scope.item=item;
