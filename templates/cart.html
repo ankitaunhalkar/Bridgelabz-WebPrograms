@@ -1,27 +1,30 @@
 
-<div layout="row" layout-padding layout-wrap layout-margin layout-align="center-center" style="padding-top:10%">
+<div layout="row" style="padding-top:10%">
 
-       <table border=1>
+       <table style="border-collapse:collapse; width: 100%;">
          <tr>
            <th> Items </th>
+           <th> Item Names </th>
            <th> Price </th>
            <th> Quantity </th>
            <th> Amount </th>
          </tr>
 
-       <tr ng-repeat="array in arrayData">
-         <td>{{array.name}}</td>
-         <td>{{array.price}}</td>
+       <tr ng-repeat="product in arrayData">
+         <td><img ng-src="{{product.image.small}}"  alt="images" height="80" width="80"/></td>
+         <td>{{product.name}}</td>
+         <td>{{product.price | currency}}</td>
          <td>
-           <md-select ng-model="quantity" class="md-no-underline">
-             <md-option value="1">1</md-option>
-             <md-option value="2">2</md-option>
-             <md-option value="3">3</md-option>
-             <md-option value="4">4</md-option>
-           </md-select>
+           <select ng-model = "quantity" ng-options = "range for range in ranges" ng-change = "cartSum(product,quantity)" ng-init = "cartSum(product,1)">
+           </select>
      </td>
+     <td>
+        {{product.sum | currency}}
+      </td>
    </tr>
-         <!-- {{sum}} -->
-
+<tr>
+  <th> Total </th>
+  <td> {{total}} </td>
+</tr>
      </table>
 </div>

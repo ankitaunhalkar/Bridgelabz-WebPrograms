@@ -10,11 +10,11 @@
             <p><strong>Storage:</strong> {{product.specs.storage}}</p>
             <p><strong>OS:</strong> {{product.specs.os}}</p>
             <p><strong>Camera:</strong> {{product.specs.camera}}</p>
-            <p><strong>Price:</strong> {{product.price}}$</p>
+            <p><strong>Price:</strong> {{product.price | currency}}</p>
           <md-card-actions  layout="row" layout-align="end center">
             <md-button class="md-raised md-primary"  ng-click='showAdvanced($state,product)'>View</md-button>
             <!-- <md-button class="md-raised md-primary" ng-click='showAlert($state)'>Buy Now</md-button> -->
-            <md-button class="md-raised md-primary" ng-click='buyNow(product)'>Buy Now</md-button>
+            <md-button class="md-raised md-primary" ng-click='addToCart(product)'>Add to Cart</md-button>
           </md-card-actions>
       </md-card-content>
       </md-card>

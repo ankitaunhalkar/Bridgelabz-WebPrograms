@@ -10,10 +10,11 @@ app.filter('selectedTags', function() {
        //if(arrayManufacturer.length==0 && arrayOs.length==0 && arrayCamera.length==0 && arrayStorage.length==0)
        //{
          tempArray = data;
+         
       // }
        if (arrayManufacturer.length > 0) {
          for (var j = 0; j < tempArray.length; j++) {
-           var element = data[j];
+           var element = tempArray[j];
 
            for (var i = 0; i < arrayManufacturer.length; i++) {
              var selectedProduct= arrayManufacturer[i];

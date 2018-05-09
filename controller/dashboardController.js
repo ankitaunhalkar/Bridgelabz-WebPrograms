@@ -20,9 +20,11 @@ $scope.showAdvanced = function(ev,items) {
  //     )
  //   };
  $scope.buyedItems = jsonRead.buyedItems;
-   $scope.buyNow = function(product) {
+   $scope.addToCart = function(product) {
     // console.log(product);
      $scope.buyedItems.push(product);
+     localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems));
+     console.log("ls",localStorage.getItem('buyedItems'));
      $state.go('home.cart');
    };
  function DialogController($scope, item) {

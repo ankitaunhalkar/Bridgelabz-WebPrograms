@@ -16,17 +16,14 @@ app.controller('homeController', function($scope,jsonRead,$mdSidenav,$state) {
 $scope.login = function () {
     $state.go('login');
 }
-var arrayManufacturer = [];
-var arrayOs = [];
-var arrayStorage = [];
-var arrayCamera = [];
+
   // selected
 
 // $scope.selected = [];
-$scope.manufacturer = arrayManufacturer;
-$scope.os = arrayOs;
-$scope.storage = arrayStorage;
-$scope.camera = arrayCamera;
+$scope.manufacturer =[];
+$scope.os = [];
+$scope.storage = [];
+$scope.camera = [];
 
 // when user clicks on checkbox, change selected list
 $scope.toggle = function (item, list) {
@@ -40,7 +37,6 @@ $scope.toggle = function (item, list) {
     list.push(item);
   }
 };
-
 // is item exists in list
 $scope.exists = function (item, list) {
   return list.indexOf(item) > -1;
