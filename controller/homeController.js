@@ -16,6 +16,9 @@ app.controller('homeController', function($scope,jsonRead,$mdSidenav,$state) {
 $scope.login = function () {
     $state.go('login');
 }
+$scope.cart = function () {
+    $state.go('home.cart');
+}
 
   // selected
 

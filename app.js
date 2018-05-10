@@ -1,4 +1,4 @@
-var app=angular.module('routerApp',['ui.router','ngMaterial','angular.filter']);
+var app=angular.module('routerApp',['ui.router','ngMaterial','angular.filter','smart-table','ui.grid']);
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('login',{

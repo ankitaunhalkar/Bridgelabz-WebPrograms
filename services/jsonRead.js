@@ -5,7 +5,9 @@ app.service('jsonRead',function($http) {
          return response.data;
     });
 }
-
-        this.buyedItems = []
+        this.buyedItems = JSON.parse(localStorage.getItem('buyedItems'))
+        if(this.buyedItems == undefined){
+          this.buyedItems = []
+        }
 
 });

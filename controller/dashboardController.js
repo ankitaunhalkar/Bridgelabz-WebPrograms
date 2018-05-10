@@ -22,11 +22,31 @@ $scope.showAdvanced = function(ev,items) {
  $scope.buyedItems = jsonRead.buyedItems;
    $scope.addToCart = function(product) {
     // console.log(product);
-     $scope.buyedItems.push(product);
-     localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems));
-     console.log("ls",localStorage.getItem('buyedItems'));
-     $state.go('home.cart');
-   };
+     // $scope.buyedItems.push(product);
+     // localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems));
+     // console.log("data",localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems)));
+
+
+     if ($scope.buyedItems.length === 0){
+       product.count = 1;
+       $scope.buyedItems.push(product);
+       localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems));
+     } else {
+       var repeat = false;
+       for(var i = 0; i< $scope.buyedItems.length; i++){
+         if($scope.buyedItems[i].id === product.id){
+           repeat = true;
+           $scope.buyedItems[i].count +=1;
+         }
+       }
+       if (!repeat) {
+         product.count = 1;
+         $scope.buyedItems.push(product);
+         localStorage.setItem('buyedItems', JSON.stringify($scope.buyedItems));
+       }
+      $state.go('home.cart');
+   }
+ };
  function DialogController($scope, item) {
    $scope.item=item;
     $scope.cancel = function() {

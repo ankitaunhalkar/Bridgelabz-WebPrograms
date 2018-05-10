@@ -1,16 +1,18 @@
 
 <div layout="row" style="padding-top:10%">
 
-       <table style="border-collapse:collapse; width: 100%;">
+       <table st-table="cartData" class="table table-striped" style="width:100%">
+         <thead>
          <tr>
            <th> Items </th>
            <th> Item Names </th>
            <th> Price </th>
            <th> Quantity </th>
            <th> Amount </th>
+           <th> Remove </th>
          </tr>
-
-       <tr ng-repeat="product in arrayData">
+       </thead>
+       <tr ng-repeat="product in cartData">
          <td><img ng-src="{{product.image.small}}"  alt="images" height="80" width="80"/></td>
          <td>{{product.name}}</td>
          <td>{{product.price | currency}}</td>
@@ -21,10 +23,13 @@
      <td>
         {{product.sum | currency}}
       </td>
+      <td>
+      <md-button class="md-warn md-raised md-hue-2" ng-click="removeItem($index)" /> Remove </md-button>
+      </td>
    </tr>
 <tr>
   <th> Total </th>
-  <td> {{total}} </td>
+  <td> {{total | currency}} </td>
 </tr>
      </table>
 </div>

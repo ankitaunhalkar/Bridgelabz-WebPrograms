@@ -22,7 +22,7 @@ app.filter('selectedTags',function() {
      var tempArray = [];//stores data to perform operations
      if (data != undefined) {
          tempArray = data;
-            console.log("hghdfhs ",tempArray);
+            //console.log("hghdfhs ",tempArray);
        if (arrayManufacturer.length > 0) {
         tempArray = genericMethod(tempArray,arrayManufacturer,"manufacturer");
        }
