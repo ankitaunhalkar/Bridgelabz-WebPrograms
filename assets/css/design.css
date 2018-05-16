@@ -48,3 +48,12 @@ td, th {
 .sideBarContent {
   margin-left: 25px;
 }
+
+.card {
+  width: 98%;
+  /* height: 100%; */
+/*
+ height: inherit;
+  min-height: 275px;
+  max-height: 600px; */
+}

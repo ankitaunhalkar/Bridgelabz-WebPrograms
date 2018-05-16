@@ -1,6 +1,6 @@
-<div class='md-padding' layout='row'  layout-wrap flex-gt-xm="30" id="dashboardCard">
-    <div layout="column" ng-repeat="product in jsonData | selectedTags:manufacturer:storage:os:camera" flex="33">
-      <md-card>
+<div class='md-padding' layout='row' layout-sm="column" layout-wrap id="dashboardCard">
+    <div layout="column" ng-repeat="product in jsonData | selectedTags:manufacturer:storage:os:camera" flex="noshrink" flex-xs="11" flex-sm="22" flex-gt-md="33">
+      <md-card class="card">
         <md-card-header>
           <span class="md-headline">{{product.name}}</span>
         </md-card-header>
